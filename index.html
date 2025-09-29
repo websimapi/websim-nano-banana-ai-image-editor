@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano Banana AI Image Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍌 Nano Banana AI Image Editor</h1>
+            <p>Upload an image and let AI transform it based on your text description</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <p class="upload-text">Click to upload or drag & drop</p>
+                    <p class="upload-subtext">PNG, JPG, GIF up to 10MB</p>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+        </div>
+
+        <div class="editor-section" id="editorSection" style="display: none;">
+            <div class="image-preview">
+                <img id="originalImage" alt="Original image">
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label for="promptInput">Describe how you want to modify the image:</label>
+                    <textarea id="promptInput" placeholder="e.g., Make this look like a cartoon, Add a sunset background, Convert to oil painting style..."></textarea>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="transformBtn" class="primary-btn">
+                        <span class="btn-text">Transform Image</span>
+                        <span class="btn-loader" style="display: none;">🍌 Processing...</span>
+                    </button>
+                    <button id="resetBtn" class="secondary-btn">Reset</button>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h3>Result</h3>
+                <div class="image-comparison">
+                    <div class="image-container">
+                        <p class="image-label">Original</p>
+                        <img id="resultOriginal" alt="Original">
+                    </div>
+                    <div class="image-container">
+                        <p class="image-label">Transformed</p>
+                        <img id="resultTransformed" alt="Transformed">
+                    </div>
+                </div>
+                <div class="download-section">
+                    <button id="downloadBtn" class="primary-btn">Download Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
